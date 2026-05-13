@@ -44,7 +44,7 @@ function buildDashboardEmbed(config, guild) {
     const btnLabel = `\`${config.ticketButtonLabel || 'Create Ticket'}\``;
 
     return new EmbedBuilder()
-        .setTitle('🎫 Ticket System Dashboard')
+        .setTitle('مرحبا بك في طلب تذكرة avaia <a:cwudl_uJnWeiYh:1491772702170550342>')
         .setDescription(`Manage ticket system settings for **${guild.name}**.\nSelect an option below to modify a setting.`)
         .setColor(getColor('info'))
         .addFields(
