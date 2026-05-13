@@ -44,7 +44,7 @@ function buildDashboardEmbed(config, guild) {
     const btnLabel = `\`${config.ticketButtonLabel || 'Create Ticket'}\``;
 
     return new EmbedBuilder()
-        .setTitle('مرحبا بك في طلب تذكرة avaia <a:cwudl_uJnWeiYh:1491772702170550342>')
+        .setTitle('**__طلب تذكره avaia<a:STAR:1491773300852916325> __**')
         .setDescription(`Manage ticket system settings for **${guild.name}**.\nSelect an option below to modify a setting.`)
         .setColor(getColor('info'))
         .addFields(
@@ -163,7 +163,7 @@ async function updateLivePanel(client, guild, config) {
         if (!panelMsg) return false;
 
         const updatedEmbed = new EmbedBuilder()
-            .setTitle('🎫 Support Tickets')
+            .setTitle('**__طلب تذكره avaia<a:STAR:1491773300852916325> __**')
             .setDescription(config.ticketPanelMessage || 'Click the button below to create a support ticket.')
             .setColor(getColor('info'));
 
