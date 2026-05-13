@@ -153,7 +153,7 @@ const panelMessage = interaction.options.getString("panel_message") || "Click th
 const dmOnClose = interaction.options.getBoolean("dm_on_close") !== false;
 
             const setupEmbed = createEmbed({ 
-                title: "🎫 Support Tickets", 
+                title: "**__طلب تذكره avaia<a:STAR:1491773300852916325> __**", 
 description: panelMessage,
                 color: getColor('info')
             });
