@@ -163,7 +163,7 @@ description: panelMessage,
                     .setCustomId("create_ticket")
 .setLabel(buttonLabel)
                     .setStyle(ButtonStyle.Primary)
-                    .setEmoji("<a:ac_kikilove:1492575215681536127>"),
+                    .setEmoji(":ac_kikilove:"),
             );
 
             try {
