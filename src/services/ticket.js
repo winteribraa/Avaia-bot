@@ -1085,7 +1085,7 @@ export async function unclaimTicket(channel, unclaimer) {
       });
     } else {
       const unclaimEmbed = createEmbed({
-        title: تم ترك هذه التكت',
+        title: 'تم ترك هذه التكت',
         description: `🔓 ${unclaimer} ترك هذه التكت بعد ان استلمها!`,
         color: '#f39c12'
       });
