@@ -8,7 +8,7 @@ import { getTicketPermissionContext } from '../../utils/ticketPermissions.js';
 import { claimTicket } from '../../services/ticket.js';
 export default {
     data: new SlashCommandBuilder()
-        .setName("claim")
+        .setName("استلام تكت")
         .setDescription("Claims an open ticket, assigning it to you.")
         .setDMPermission(false),
 
@@ -67,7 +67,7 @@ export default {
                 embeds: [
                     successEmbed(
                         "Ticket Claimed!",
-                        "You have successfully claimed this ticket.",
+                        "لقدم قمت بإستلام هذه التكت!.",
                     ),
                 ],
             });
