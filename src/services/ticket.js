@@ -162,7 +162,7 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     
     const embed = createEmbed({
       title: `Ticket #${ticketNumber}`,
-      description: `${member.toString()}, thanks for creating a ticket!\n\n**Reason:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
+      description: `${member.toString()}, شكرا لاستخدام avaia bot ticket system!\n\n**Reason:** ${reason}\n**Priority:** ${priorityInfo.emoji} ${priorityInfo.label}`,
       color: priorityInfo.color,
       fields: [
         { name: 'Status', value: '🟢 Open', inline: true },
@@ -467,7 +467,7 @@ export async function claimTicket(channel, claimer) {
     if (ticketData.claimedBy) {
       return { 
         success: false, 
-        error: `This ticket is already claimed by <@${ticketData.claimedBy}>` 
+        error: `لقد استلمت التكت بالفعل عن طريق <@${ticketData.claimedBy}>` 
       };
     }
     
@@ -1046,17 +1046,17 @@ export async function unclaimTicket(channel, unclaimer) {
       const row = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setCustomId('ticket_close')
-          .setLabel('Close Ticket')
+          .setLabel('اقفال التكت')
           .setStyle(ButtonStyle.Danger)
           .setEmoji('🔒'),
         new ButtonBuilder()
           .setCustomId('ticket_claim')
-          .setLabel('Claim')
+          .setLabel('استلام')
           .setStyle(ButtonStyle.Primary)
           .setEmoji('🙋'),
         new ButtonBuilder()
           .setCustomId('ticket_pin')
-          .setLabel('Pin')
+          .setLabel('تثبيت')
           .setStyle(ButtonStyle.Secondary)
           .setEmoji('📌')
       );
