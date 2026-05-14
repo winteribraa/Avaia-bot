@@ -1074,8 +1074,8 @@ export async function unclaimTicket(channel, unclaimer) {
     
     if (claimMessage) {
       const unclaimEmbed = createEmbed({
-        title: 'Ticket Unclaimed',
-        description: `🔓 ${unclaimer} has unclaimed this ticket!`,
+        title: 'تم ترك هذه التكت ',
+        description: `🔓 ${unclaimer} ترك هذه التكت بعد ان استلمها !`,
         color: '#f39c12'
       });
       
@@ -1085,8 +1085,8 @@ export async function unclaimTicket(channel, unclaimer) {
       });
     } else {
       const unclaimEmbed = createEmbed({
-        title: 'Ticket Unclaimed',
-        description: `🔓 ${unclaimer} has unclaimed this ticket!`,
+        title: تم ترك هذه التكت',
+        description: `🔓 ${unclaimer} ترك هذه التكت بعد ان استلمها!`,
         color: '#f39c12'
       });
       
