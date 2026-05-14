@@ -298,7 +298,7 @@ export async function closeTicket(channel, closer, reason = 'No reason provided'
         if (ticketCreator) {
           const dmEmbed = createEmbed({
             title: '🎫 لقد تم اقفال التكت الخاصة بك',
-            description: `التكت للخاصة بك **${channel.name}** تم اقفالها .\n\n**Reason:** ${reason}\n**Closed by:** ${closer.tag}\n**Closed at:** <t:${Math.floor(Date.now() / 1000)}:F>\n\nThank you for using our support system! If you have any further questions, feel free to create a new ticket.`,
+            description: `التكت الخاصة بك **${channel.name}** تم اقفالها .\n\n**Reason:** ${reason}\n**تم اقفالها عن طريق:** ${closer.tag}\n**في:** <t:${Math.floor(Date.now() / 1000)}:F>\n\nThank you for using our support system! If you have any further questions, feel free to create a new ticket.`,
             color: '#e74c3c',
             footer: { text: `Ticket ID: ${ticketData.id}` }
           });
@@ -309,9 +309,9 @@ export async function closeTicket(channel, closer, reason = 'No reason provided'
           try {
             const feedbackEmbed = createEmbed({
               title: '⭐ قم بتقييم خدمة الدعم الفني ل avaia ?',
-              description: `We'd love to know how we did with **${channel.name}**.\nSelect a rating below — it only takes a second!`,
+              description: `نحب ان نعرف هل كانت خدمتنا جيده في **${channel.name}**.\nيمكنك التقييم من الازرار التي في الاسفل - لن يأخذ الامر ثواني !`,
               color: '#F1C40F',
-              footer: { text: 'Your feedback helps us improve.' },
+              footer: { text: 'ملاحظاتك تساعدنا على التحسن.' },
             });
 
             const base = `ticket_feedback:${channel.guild.id}:${channel.id}`;
@@ -325,7 +325,7 @@ export async function closeTicket(channel, closer, reason = 'No reason provided'
             const declineRow = new ActionRowBuilder().addComponents(
               new ButtonBuilder()
                 .setCustomId(`ticket_feedback_decline:${channel.guild.id}:${channel.id}`)
-                .setLabel('❌ No thanks')
+                .setLabel('❌ لا شكرا')
                 .setStyle(ButtonStyle.Secondary),
             );
 
@@ -393,7 +393,7 @@ components: []
     }
     
     const closeEmbed = createEmbed({
-      title: 'Ticket Closed',
+      title: 'تم اقفال هذه التكت',
       description: `لقد تم اقفال هذه التكت عن طريق ${closer}.\n**Reason:** ${reason}${dmOnClose ? '\n\n📩 سيتم ارسال بيانات هذه التكت الى الشخص الذي صنعها.' : ''}`,
       color: '#e74c3c',
       footer: { text: `Ticket ID: ${ticketData.id}` }
@@ -516,7 +516,7 @@ export async function claimTicket(channel, claimer) {
     }
     
     const claimEmbed = createEmbed({
-      title: 'Ticket Claimed',
+      title: 'تم استلام هذه التكت',
       description: `🎉 ${claimer} استلم هذه التكت!`,
       color: '#2ecc71'
     });
@@ -678,7 +678,7 @@ export async function reopenTicket(channel, reopener) {
     }
     
     const reopenEmbed = createEmbed({
-      title: 'Ticket Reopened',
+      title: 'تم اعادة فتح هذه التكت',
       description: `🔓 ${reopener} اعاد فتح هذه التكت!`,
       color: '#2ecc71'
     });
@@ -831,8 +831,8 @@ export async function deleteTicket(channel, deleter) {
     }
     
     const deleteEmbed = createEmbed({
-      title: 'Ticket Deleted',
-      description: `🗑️ This ticket will be permanently deleted in ${TICKET_DELETE_DELAY_SECONDS} seconds.`,
+      title: 'تم حذف هذه التكت',
+      description: `🗑️ سيتم حذف هذه التذكره في ${TICKET_DELETE_DELAY_SECONDS} ثواني.`,
       color: '#e74c3c',
       footer: { text: `Ticket ID: ${ticketData.id}` }
     });
