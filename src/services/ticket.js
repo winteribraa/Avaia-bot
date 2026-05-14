@@ -174,17 +174,17 @@ export async function createTicket(guild, member, categoryId, reason = 'No reaso
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setCustomId('ticket_close')
-        .setLabel('Close Ticket')
+        .setLabel('اغلاق التكت')
         .setStyle(ButtonStyle.Danger)
         .setEmoji('🔒'),
       new ButtonBuilder()
         .setCustomId('ticket_claim')
-        .setLabel('Claim')
+        .setLabel('استلام')
         .setStyle(ButtonStyle.Primary)
         .setEmoji('🙋'),
       new ButtonBuilder()
         .setCustomId('ticket_pin')
-        .setLabel('Pin')
+        .setLabel('تثبيت')
         .setStyle(ButtonStyle.Secondary)
         .setEmoji('📌')
     );
@@ -297,8 +297,8 @@ export async function closeTicket(channel, closer, reason = 'No reason provided'
         const ticketCreator = await channel.client.users.fetch(ticketData.userId).catch(() => null);
         if (ticketCreator) {
           const dmEmbed = createEmbed({
-            title: '🎫 Your Ticket Has Been Closed',
-            description: `Your ticket **${channel.name}** has been closed.\n\n**Reason:** ${reason}\n**Closed by:** ${closer.tag}\n**Closed at:** <t:${Math.floor(Date.now() / 1000)}:F>\n\nThank you for using our support system! If you have any further questions, feel free to create a new ticket.`,
+            title: '🎫 لقد تم اقفال التكت الخاصة بك',
+            description: `التكت للخاصة بك **${channel.name}** تم اقفالها .\n\n**Reason:** ${reason}\n**Closed by:** ${closer.tag}\n**Closed at:** <t:${Math.floor(Date.now() / 1000)}:F>\n\nThank you for using our support system! If you have any further questions, feel free to create a new ticket.`,
             color: '#e74c3c',
             footer: { text: `Ticket ID: ${ticketData.id}` }
           });
@@ -308,7 +308,7 @@ export async function closeTicket(channel, closer, reason = 'No reason provided'
           // Post-close feedback survey — separate DM message so it can be updated on submit
           try {
             const feedbackEmbed = createEmbed({
-              title: '⭐ How was your support experience?',
+              title: '⭐ قم بتقييم خدمة الدعم الفني ل avaia ?',
               description: `We'd love to know how we did with **${channel.name}**.\nSelect a rating below — it only takes a second!`,
               color: '#F1C40F',
               footer: { text: 'Your feedback helps us improve.' },
@@ -394,7 +394,7 @@ components: []
     
     const closeEmbed = createEmbed({
       title: 'Ticket Closed',
-      description: `This ticket has been closed by ${closer}.\n**Reason:** ${reason}${dmOnClose ? '\n\n📩 A DM has been sent to the ticket creator.' : ''}`,
+      description: `لقد تم اقفال هذه التكت عن طريق ${closer}.\n**Reason:** ${reason}${dmOnClose ? '\n\n📩 سيتم ارسال بيانات هذه التكت الى الشخص الذي صنعها.' : ''}`,
       color: '#e74c3c',
       footer: { text: `Ticket ID: ${ticketData.id}` }
     });
@@ -402,12 +402,12 @@ components: []
     const controlRow = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setCustomId('ticket_reopen')
-        .setLabel('Reopen Ticket')
+        .setLabel('اعاده فتح التكت')
         .setStyle(ButtonStyle.Success)
         .setEmoji('🔓'),
       new ButtonBuilder()
         .setCustomId('ticket_delete')
-        .setLabel('Delete Ticket')
+        .setLabel('حذف التكت')
         .setStyle(ButtonStyle.Danger)
         .setEmoji('🗑️')
     );
@@ -493,18 +493,18 @@ export async function claimTicket(channel, claimer) {
       const row = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setCustomId('ticket_close')
-          .setLabel('Close Ticket')
+          .setLabel('اقفال التكت')
           .setStyle(ButtonStyle.Danger)
           .setEmoji('🔒'),
         new ButtonBuilder()
           .setCustomId('ticket_claim')
-          .setLabel('Claimed')
+          .setLabel('تم الاستلام')
           .setStyle(ButtonStyle.Secondary)
           .setEmoji('🙋')
           .setDisabled(true),
         new ButtonBuilder()
           .setCustomId('ticket_pin')
-          .setLabel('Pin')
+          .setLabel('تثبيت')
           .setStyle(ButtonStyle.Secondary)
           .setEmoji('📌')
       );
@@ -517,14 +517,14 @@ export async function claimTicket(channel, claimer) {
     
     const claimEmbed = createEmbed({
       title: 'Ticket Claimed',
-      description: `🎉 ${claimer} has claimed this ticket!`,
+      description: `🎉 ${claimer} استلم هذه التكت!`,
       color: '#2ecc71'
     });
     
     const unclaimRow = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setCustomId('ticket_unclaim')
-        .setLabel('Unclaim')
+        .setLabel('غير مستلمه')
         .setStyle(ButtonStyle.Secondary)
         .setEmoji('🔓')
     );
@@ -655,7 +655,7 @@ export async function reopenTicket(channel, reopener) {
       const row = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setCustomId('ticket_close')
-          .setLabel('Close Ticket')
+          .setLabel('اقفال التكت')
           .setStyle(ButtonStyle.Danger)
           .setEmoji('🔒'),
         new ButtonBuilder()
@@ -679,7 +679,7 @@ export async function reopenTicket(channel, reopener) {
     
     const reopenEmbed = createEmbed({
       title: 'Ticket Reopened',
-      description: `🔓 ${reopener} has reopened this ticket!`,
+      description: `🔓 ${reopener} اعاد فتح هذه التكت!`,
       color: '#2ecc71'
     });
 
