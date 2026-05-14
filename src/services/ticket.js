@@ -524,7 +524,7 @@ export async function claimTicket(channel, claimer) {
     const unclaimRow = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setCustomId('ticket_unclaim')
-        .setLabel('غير مستلمه')
+        .setLabel('ترك التكت')
         .setStyle(ButtonStyle.Secondary)
         .setEmoji('🔓')
     );
